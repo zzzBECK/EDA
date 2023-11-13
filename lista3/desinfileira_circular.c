@@ -9,17 +9,12 @@ typedef struct fila
 
 int desenfileira(fila *f, int *y)
 {
-    // Verificar se a fila está vazia
     if (f->p == f->u)
-    {
-        return 0;
-    }
+        return 1;
 
-    // Desenfileirar (remover o elemento da frente da fila)
     *y = f->dados[f->p];
 
-    // Atualizar o ponteiro da frente da fila
     f->p = (f->p + 1) % f->N;
 
-    return 1;
+    return 0;
 }
