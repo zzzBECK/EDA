@@ -58,28 +58,3 @@ void print_list(celula *le)
     }
     printf("NULL\n");
 }
-
-int main()
-{
-    // Exemplo de uso
-    celula le = {0, NULL};
-    celula a = {1, NULL}, b = {2, NULL}, c = {2, NULL}, d = {3, NULL}, e = {2, NULL};
-    le.prox = &a;
-    a.prox = &b;
-    b.prox = &c;
-    c.prox = &d;
-    d.prox = &e;
-
-    printf("Lista original: ");
-    print_list(&le);
-
-    remove_elemento(&le, 2);
-    printf("Lista após remover primeira ocorrência de 2: ");
-    print_list(&le);
-
-    remove_todos_elementos(&le, 2);
-    printf("Lista após remover todas ocorrências de 2: ");
-    print_list(&le);
-
-    return 0;
-}
